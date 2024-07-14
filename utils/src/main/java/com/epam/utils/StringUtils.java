@@ -1,7 +1,15 @@
 package com.epam.utils;
 
+import org.apache.commons.lang3.math.NumberUtils;
+
+import java.math.BigDecimal;
+
 public class StringUtils {
     public static boolean isPositiveNumber(String str) {
-         //here magic will happen
+        if (NumberUtils.isParsable(str)) {
+            BigDecimal number = new BigDecimal(str);
+            return number.compareTo(BigDecimal.ZERO) > 0;
+        }
+        return false;
     }
 }
