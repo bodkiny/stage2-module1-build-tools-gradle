@@ -1,15 +1,13 @@
 plugins {
     id 'java-library'
     id 'maven-publish'
+    id 'java'
 }
 
-group = 'com.epam'
-version = '1.3.5'
+apply plugin: 'maven-publish'
 
 java {
-    toolchain {
-        languageVersion = JavaLanguageVersion.of(17)
-    }
+    sourceCompatibility = '1.8'
 }
 
 repositories {
@@ -19,9 +17,8 @@ repositories {
 publishing {
     publications {
         maven(MavenPublication) {
-            groupId = 'com.epam'
-            artifactId = 'utils'
-            version = version
+            group = 'com.epam'
+            version = '1.3.5'
 
             from components.java
         }
