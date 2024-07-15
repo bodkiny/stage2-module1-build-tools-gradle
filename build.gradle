@@ -2,6 +2,10 @@ repositories {
     mavenCentral()
 }
 
+wrapper {
+    gradleVersion '7.4'
+}
+
 subprojects {
     apply plugin: 'java'
 
